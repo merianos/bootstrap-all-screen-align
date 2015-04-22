@@ -1,0 +1,42 @@
+/**
+*   The following code is responsible to product text
+*   align classes for different screen sizes.
+------------------------------------------------------------------*/
+@media (min-width: 768px) {
+  .text-sm-left {
+    text-align: left !important; }
+
+  .text-sm-right {
+    text-align: right !important; }
+
+  .text-sm-center {
+    text-align: center !important; }
+
+  .text-sm-justify {
+    text-align: justify !important; } }
+@media (min-width: 970px) {
+  .text-md-left {
+    text-align: left !important; }
+
+  .text-md-right {
+    text-align: right !important; }
+
+  .text-md-center {
+    text-align: center !important; }
+
+  .text-md-justify {
+    text-align: justify !important; } }
+@media (min-width: 1024px) {
+  .text-lg-left {
+    text-align: left !important; }
+
+  .text-lg-right {
+    text-align: right !important; }
+
+  .text-lg-center {
+    text-align: center !important; }
+
+  .text-lg-justify {
+    text-align: justify !important; } }
+
+/*# sourceMappingURL=text-align.css.map */

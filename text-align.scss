@@ -1,0 +1,22 @@
+/**
+*   The following code is responsible to product text
+*   align classes for different screen sizes.
+------------------------------------------------------------------*/
+$screens : 768, 970, 1024;
+$sizes : sm, md, lg;
+$aligns : left, right, center, justify;
+$count : 0;
+
+@each $screen in $screens {
+    $count : $count + 1;
+    @media (min-width: #{$screen}px)
+    {
+        $size : nth($sizes, $count);
+
+        @each $align in $aligns {
+            .text-#{$size}-#{$align} {
+                text-align : #{$align} !important;
+            }
+        }
+    }
+}
