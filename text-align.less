@@ -1,0 +1,28 @@
+@align: left, right, center, justify;
+@screen : @screen-sm-min, @screen-md-min, @screen-lg-min;
+@sizes  : sm, md, lg;
+
+.createMediaQueryRules(@mediaIterator:1) when (@mediaIterator <= length(@screen))
+{
+    @mediaQuery : extract(extract(@screen, @mediaIterator), 1);
+    @size : extract(extract(@sizes, @mediaIterator), 1);
+
+    @media (min-width : @mediaQuery)
+    {
+        .createTextAlignRules(@iterator:1) when (@iterator <= length(@align))
+        {
+            @direction: extract(extract(@align, @iterator), 1);
+
+            .text-@{size}-@{direction}
+            {
+                text-align : @direction !important;
+            }
+
+            .createTextAlignRules((@iterator + 1));
+        }
+        .createTextAlignRules();
+    }
+
+    .createMediaQueryRules((@mediaIterator + 1));
+}
+.createMediaQueryRules();
